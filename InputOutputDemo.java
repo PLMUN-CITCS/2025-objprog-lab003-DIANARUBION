@@ -2,30 +2,32 @@ import java.util.Scanner;
 
 public class InputOutputDemo {
     public static void main(String[] args) {
-        // Create a Scanner object for user input
-        Scanner scanner = new Scanner(System.in);
+        // Create a Scanner object
+        Scanner input = new Scanner(System.in);
 
-        // Prompt for an integer
+        // Prompt for and input an integer
         System.out.print("Enter an integer: ");
-        int integerValue = scanner.nextInt();
+        int userInt = input.nextInt();
 
-        // Prompt for a decimal number
+        // Prompt for and input a double
         System.out.print("Enter a decimal number: ");
-        double decimalValue = scanner.nextDouble();
-        
-        // Consume the newline character left after nextDouble()
-        scanner.nextLine();
+        double userDouble = input.nextDouble();
 
-        // Prompt for a string
+        // Consume newline and prompt for a string
+        input.nextLine(); // Consume newline
         System.out.print("Enter a word or sentence: ");
-        String stringValue = scanner.nextLine();
+        String userString = input.nextLine();
 
-        // Display the values using formatted output
-        System.out.println("\nYour integer: " + integerValue);
-        System.out.printf("Your decimal number: %.2f%n", decimalValue);
-        System.out.println("Your string: " + stringValue);
+        // Output with Formatting (Integer)
+        System.out.printf("Your integer: %d%n", userInt);
+
+        // Output with Formatting (Double)
+        System.out.printf("Your decimal number: %.2f%n", userDouble);
+
+        // Output with Formatting (String)
+        System.out.printf("Your string: %s%n", userString);
 
         // Close the scanner
-        scanner.close();
+        input.close();
     }
 }
